@@ -12,6 +12,10 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
+        path: 'buscar',
+        component: HeroeComponent
+      },
+      {
         path: 'heroe/:id',
         component: HeroeComponent
       },

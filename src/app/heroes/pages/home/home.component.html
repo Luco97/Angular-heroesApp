@@ -1,3 +1,46 @@
-<p>home works!</p>
 
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push" class="sidenav">
+        <mat-toolbar color="primary">
+            <h1>HeroesApp</h1>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a  routerLink="./listado"
+            mat-list-item
+            (click)="sidenav.toggle()">
+            <mat-icon mat-list-icon>label</mat-icon>
+            <span>Listado de Heroes</span>
+            </a>
+
+            <a  routerLink="./agregar"
+            mat-list-item
+            (click)="sidenav.toggle()">
+            <mat-icon mat-list-icon>add</mat-icon>
+            <span>Agregar Heroe</span>
+            </a>
+
+            <a  routerLink="./buscar"
+            mat-list-item
+            (click)="sidenav.toggle()">
+            <mat-icon mat-list-icon>search</mat-icon>
+            <span>Buscar Heroe</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <button mat-mini-fab color="primary"
+                (click)="sidenav.toggle()" >
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span style="flex: 1 1 auto;"></span>
+        <button style="margin-left: 5px;" mat-raised-button color="primary">
+            Logout
+        </button>
+        
+    </mat-toolbar>
+
+    <div style="margin: 10px;">
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
