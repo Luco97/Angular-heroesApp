@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
     path:'',
+    component: HomeComponent,
     children: [
-      {
-        path: 'home',
-        component: HomeComponent
-      },
       {
         path: 'heroe/:id',
         component: HeroeComponent
@@ -32,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'home'
+        redirectTo: 'listado'
       }
     ]
   }
