@@ -1,5 +1,6 @@
 export interface Heroe {
-    id:               string;
+    id?:               string;
+    alt_img?:         string;
     superhero:        string;
     publisher:        Publisher;
     alter_ego:        string;

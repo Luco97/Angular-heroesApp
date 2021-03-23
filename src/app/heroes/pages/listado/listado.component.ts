@@ -10,7 +10,10 @@ import { HeroesService } from '../../services/heroes.service';
 })
 export class ListadoComponent implements OnInit {
 
+  
+  
   Heroes: Heroe[] = [];
+  
 
   constructor(private heroesService: HeroesService) { }
 
@@ -20,7 +23,7 @@ export class ListadoComponent implements OnInit {
     this.heroesService.getHeroes()
                       .subscribe( heroes => {
                         this.Heroes = heroes;
-                        console.log(this.Heroes);
+                        //console.log(this.Heroes);
                       }
                       , err => {
                         this.Heroes = [];

@@ -10,6 +10,9 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { EditarComponent } from './pages/editar/editar.component';
 
 import { MaterialModule } from '../material/material.module';
+import { CommonModule } from '@angular/common';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { ImagenPipePipe } from './pipes/imagen-pipe.pipe';
 
 
 
@@ -19,9 +22,12 @@ import { MaterialModule } from '../material/material.module';
     HeroeComponent,
     HomeComponent,
     ListadoComponent,
-    EditarComponent
+    EditarComponent,
+    HeroeTarjetaComponent,
+    ImagenPipePipe
   ],
   imports: [
+    CommonModule,
     FlexLayoutModule,
     MaterialModule,
     HeroesRoutingModule
