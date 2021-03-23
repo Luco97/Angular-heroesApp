@@ -13,6 +13,7 @@ import { MaterialModule } from '../material/material.module';
 import { CommonModule } from '@angular/common';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { ImagenPipePipe } from './pipes/imagen-pipe.pipe';
+import { BuscarComponent } from './pages/buscar/buscar.component';
 
 
 
@@ -24,7 +25,8 @@ import { ImagenPipePipe } from './pipes/imagen-pipe.pipe';
     ListadoComponent,
     EditarComponent,
     HeroeTarjetaComponent,
-    ImagenPipePipe
+    ImagenPipePipe,
+    BuscarComponent
   ],
   imports: [
     CommonModule,

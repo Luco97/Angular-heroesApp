@@ -1,1 +1,35 @@
-<p>heroe works!</p>
+
+<mat-grid-list cols="1" *ngIf="!heroe; else divHeroe">
+    <mat-grid-tile>
+        <mat-spinner>
+        </mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divHeroe>
+<mat-card>
+    <div fxLayout="row"
+         fxLayout.xs="column"
+         fxLayoutGap="30px">
+        <div fxFlex="40">
+            <img [src]="heroe|imagenPipe"
+                 style="width: 100%;">
+        </div>
+        <div fxFlex="60">
+            <mat-card>
+            <mat-list>
+                <mat-list-item><h1><strong> Superheroe: </strong>{{ heroe.superhero }}</h1></mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><h3><strong>Alter ego: </strong>{{ heroe.alter_ego }}</h3></mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><h3><strong>Publisher: </strong>{{ heroe.publisher }}</h3></mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><h3><strong>Primera aparicion: </strong>{{ heroe.first_appearance }}</h3></mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item><h3><strong>Personajes: </strong>{{ heroe.characters }}</h3></mat-list-item>
+            </mat-list>
+        </mat-card>
+        </div>
+    </div>
+</mat-card>
+</ng-template>

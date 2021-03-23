@@ -5,6 +5,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
     children: [
       {
         path: 'buscar',
-        component: HeroeComponent
+        component: BuscarComponent
       },
       {
         path: 'heroe/:id',

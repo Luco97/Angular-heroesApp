@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Heroe } from '../interfaces/heroe.interfaces';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class HeroesService {
 
-  private apiUrl: string = 'http://localhost:3000'
+  private apiUrl: string = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +18,10 @@ export class HeroesService {
     const url: string = `${this.apiUrl}/heroes`;
 
     return this.http.get<Heroe[]>(url);
+  }
+  getHeroe(id: string): Observable<Heroe>{
+    const url: string = `${this.apiUrl}/heroes/${id}`;
+
+    return this.http.get<Heroe>(url);
   }
 }
