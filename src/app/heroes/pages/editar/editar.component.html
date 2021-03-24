@@ -4,12 +4,20 @@
     <div fxFlex="50" fxLayout="column" >
         <app-heroe-edicion [InputHeroe]="heroe"></app-heroe-edicion>
         <br>
+        <div fxLayout="column" fxLayoutGap="10px">
             <button mat-raised-button color="primary"
                 (click)="guardar()"
                 [routerLink]="['/heroes/listado']">
                 <mat-icon>edit</mat-icon>
                 Editar
             </button>
+            <button mat-raised-button color="warn"
+                (click)="borrar()"
+                [routerLink]="['/heroes/listado']">
+                <mat-icon>delete</mat-icon>
+                Borrar
+            </button>
+        </div>
     </div>
 
     <div fxFlex="50">

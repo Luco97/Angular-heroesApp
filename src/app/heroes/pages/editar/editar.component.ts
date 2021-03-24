@@ -43,5 +43,9 @@ export class EditarComponent implements OnInit {
           console.log("Respuesta", resp);
         })
   }
+  borrar() {
+    this.heroesServive.DeleteHeroe(this.heroe.id! )
+        .subscribe()
+  }
 
 }
