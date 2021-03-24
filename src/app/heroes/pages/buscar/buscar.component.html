@@ -1,1 +1,33 @@
-<p>buscar works!</p>
+<mat-card>
+    <mat-card-header>
+        <h1>Buscador de Heroes</h1>
+    </mat-card-header>
+    <mat-card-actions fxLayout="column">
+        <mat-form-field class="example-full-width">
+            <mat-label>Heroe</mat-label>
+            <input type="text"
+                   placeholder="Buscar heroe"
+                   aria-label="Number"
+                   matInput
+                   [(ngModel)]="termino"
+                   [matAutocomplete]="auto"
+                   (input)="sugerencias()">
+            <mat-autocomplete   autoActiveFirstOption 
+                                #auto="matAutocomplete"
+                                (optionSelected)="opcionSeleccionada( $event)">
+                <mat-option *ngFor="let option of heroes" [value]="option">
+                    {{option.superhero}}
+                </mat-option>
+                <mat-option *ngIf="heroes.length<1 && termino.length>0"
+                            value="">
+                    No existe tal wea imbecil <!-- COMO NO EXISTE, SE MANDA COMO ALTERNATIVA value , POR ESA RAZON SE MANDA UN STRING VACIO Y POR ENDE LA VALIDACION-->
+                </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+    </mat-card-actions>
+</mat-card>
+<div>
+    <mat-grid-list cols="1">
+        <app-heroe-tarjeta [IsertarHeroe]="heroeSeleccionado"></app-heroe-tarjeta>
+    </mat-grid-list>
+</div>

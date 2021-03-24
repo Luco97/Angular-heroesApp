@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { ImagenPipePipe } from './pipes/imagen-pipe.pipe';
 import { BuscarComponent } from './pages/buscar/buscar.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -32,7 +33,8 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    HeroesRoutingModule
+    HeroesRoutingModule,
+    FormsModule
   ]
 })
 export class HeroesModule { }
