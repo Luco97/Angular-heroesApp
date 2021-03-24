@@ -29,4 +29,17 @@ export class HeroesService {
     
     return this.http.get<Heroe[]>(url);
   }
+  postHeroe(heroe: Heroe): Observable<Heroe>{ //Agrega nuevo heroe
+
+    const url: string = `${this.apiUrl}/heroes`;
+
+    return this.http.post<Heroe>(url, heroe);
+  }
+  putHeroe(heroe: Heroe): Observable<Heroe>{ //Actualiza heroe
+
+    const url: string = `${this.apiUrl}/heroes/${heroe.id}`;
+
+    return this.http.put<Heroe>(url, heroe);
+  }
+
 }

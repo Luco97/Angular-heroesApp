@@ -15,6 +15,7 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
 import { ImagenPipePipe } from './pipes/imagen-pipe.pipe';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { FormsModule } from '@angular/forms';
+import { HeroeEdicionComponent } from './components/heroe-edicion/heroe-edicion.component';
 
 
 
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     EditarComponent,
     HeroeTarjetaComponent,
     ImagenPipePipe,
-    BuscarComponent
+    BuscarComponent,
+    HeroeEdicionComponent
   ],
   imports: [
     CommonModule,
