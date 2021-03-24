@@ -34,4 +34,14 @@ export class EditarComponent implements OnInit {
         })
   }
 
+  guardar() {
+    if(this.heroe.superhero.trim().length == 0){
+      return;
+    }
+    this.heroesServive.putHeroe(this.heroe)
+        .subscribe( resp => {
+          console.log("Respuesta", resp);
+        })
+  }
+
 }
