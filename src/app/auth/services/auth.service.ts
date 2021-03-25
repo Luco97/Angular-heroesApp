@@ -27,7 +27,12 @@ export class AuthService {
                   tap( resp => {
                     //console.log(resp)
                     this._user = resp;
+                  }),
+                  tap( resp => {
+                    //console.log(resp)
+                    localStorage.setItem('token',resp.id.toString());
                   })
+                  
                 );
   }
 }
