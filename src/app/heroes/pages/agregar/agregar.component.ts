@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Heroe, Publisher } from '../../interfaces/heroe.interfaces';
 import { HeroesService } from '../../services/heroes.service';
 
@@ -30,7 +31,7 @@ export class AgregarComponent implements OnInit {
     alt_img: ''
   }
 
-  constructor(private heroesService: HeroesService) { }
+  constructor(private heroesService: HeroesService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -44,6 +45,13 @@ export class AgregarComponent implements OnInit {
     this.heroesService.postHeroe(this.heroe)
         .subscribe( resp => {
           console.log("Respuesta", resp);
+          this.mostrarSnackbar()
+          
         })
+  }
+  mostrarSnackbar(){
+    this.snackBar.open('Registro creado', 'Ok!',{
+      duration:3500
+    });
   }
 }
