@@ -34,7 +34,11 @@
             <mat-icon>menu</mat-icon>
         </button>
         <span style="flex: 1 1 auto;"></span>
-        <button style="margin-left: 5px;" mat-raised-button color="primary">
+        <span>{{ Usuario.usuario }}</span>
+        <button style="margin-left: 5px;" 
+                mat-raised-button 
+                color="primary"
+                (click)="logout()">
             Logout
         </button>
         
