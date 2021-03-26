@@ -29,8 +29,8 @@ export class AuthService {
                 .pipe(
                   map( auth =>{
                     //console.log(auth);
-                    this._user = auth;
-                    return true;
+                    this._user = auth; //Para tener e lvalor del nombrey asi mostrarlo en e menu
+                    return true; //Significa quesi esta autenticado
                   })
                 )
   }
